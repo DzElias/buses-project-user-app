@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:medirutas/routes/routes.dart';
+import 'package:medirutas/services/socket_service.dart';
+import 'package:provider/provider.dart';
 
 class LoadingPage extends StatefulWidget {
   LoadingPage({Key? key}) : super(key: key);
@@ -15,6 +17,7 @@ class _LoadingPageState extends State<LoadingPage> {
 
   @override
   void initState() {
+    
     super.initState();
     checkPermission();
   }
@@ -98,10 +101,11 @@ class _LoadingPageState extends State<LoadingPage> {
   checkPermission() async {
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      // Location services are not enabled don't continue
-      // accessing the position and request users of the
-      // App to enable the location services.
-      return Future.error('Location services are disabled.');
+      Geolocator.openLocationSettings();
+      return setState(() {
+          permissionStatus = false;
+        });
+     
     }
 
     permission = await Geolocator.checkPermission();
@@ -123,7 +127,7 @@ class _LoadingPageState extends State<LoadingPage> {
       });
     }
 
-    Navigator.pushReplacementNamed(context, 'home');
+    Navigator.pushReplacementNamed(context, 'choice_bus');
   }
 
   onDeniedForever() async {
