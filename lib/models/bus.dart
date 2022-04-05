@@ -1,8 +1,3 @@
-// To parse this JSON data, do
-//
-//     final bus = busFromJson(jsonString);
-
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 Bus busFromJson(String str) => Bus.fromJson(json.decode(str));
@@ -10,28 +5,29 @@ Bus busFromJson(String str) => Bus.fromJson(json.decode(str));
 String busToJson(Bus data) => json.encode(data.toJson());
 
 class Bus {
-    Bus({
-        required this.id,
-        required this.titulo,
-        required this.linea,
-        required this.paradas,
-        required this.primeraParada,
-        required this.ultimaParada,
-        required this.proximaParada,
-        required this.latitud,
-        required this.longitud,
-    });
-    String id;
-    String titulo;
-    String linea;
-    List<dynamic> paradas;
-    String primeraParada;
-    String ultimaParada;
-    String proximaParada;
-    double latitud;
-    double longitud;
+  Bus(
+      {required this.id,
+      required this.titulo,
+      required this.linea,
+      required this.paradas,
+      required this.primeraParada,
+      required this.ultimaParada,
+      required this.proximaParada,
+      required this.latitud,
+      required this.longitud,
+      required this.ruta});
+  String id;
+  String titulo;
+  String linea;
+  List<dynamic> paradas;
+  String primeraParada;
+  String ultimaParada;
+  String proximaParada;
+  double latitud;
+  double longitud;
+  String ruta;
 
-    factory Bus.fromJson(Map<String, dynamic> json) => Bus(
+  factory Bus.fromJson(Map<String, dynamic> json) => Bus(
         id: json["_id"],
         titulo: json["titulo"],
         linea: json["linea"],
@@ -41,9 +37,10 @@ class Bus {
         proximaParada: json["ProximaParada"],
         latitud: json["latitud"].toDouble(),
         longitud: json["longitud"].toDouble(),
-    );
+        ruta: json["ruta"],
+      );
 
-    Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
         "id": id,
         "titulo": titulo,
         "linea": linea,
@@ -53,5 +50,6 @@ class Bus {
         "ProximaParada": proximaParada,
         "latitud": latitud,
         "longitud": longitud,
-    };
+        "ruta": ruta,
+      };
 }

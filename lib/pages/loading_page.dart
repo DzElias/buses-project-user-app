@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:medirutas/routes/routes.dart';
-import 'package:medirutas/services/socket_service.dart';
-import 'package:provider/provider.dart';
 
 class LoadingPage extends StatefulWidget {
-  LoadingPage({Key? key}) : super(key: key);
+  const LoadingPage({Key? key}) : super(key: key);
 
   @override
   _LoadingPageState createState() => _LoadingPageState();
@@ -17,7 +14,6 @@ class _LoadingPageState extends State<LoadingPage> {
 
   @override
   void initState() {
-    
     super.initState();
     checkPermission();
   }
@@ -29,10 +25,9 @@ class _LoadingPageState extends State<LoadingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //TODO: Implementar Loading spinner
       body: Stack(
         children: [
-          Center(child: CircularProgressIndicator()),
+          const Center(child: CircularProgressIndicator()),
           permissionStatus
               ? const SizedBox()
               : Column(
@@ -51,7 +46,7 @@ class _LoadingPageState extends State<LoadingPage> {
                                   0, -3), // changes position of shadow
                             ),
                           ]),
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                           left: 20, right: 20, bottom: 50, top: 30),
                       child: Center(
                         child: Column(
@@ -63,18 +58,19 @@ class _LoadingPageState extends State<LoadingPage> {
                                   fontWeight: FontWeight.w500,
                                   color: Colors.black87),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 primary: Colors.blueAccent,
-                                padding: EdgeInsets.symmetric(vertical: 15),
-                                shape: new RoundedRectangleBorder(
-                                  borderRadius: new BorderRadius.circular(30.0),
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 15),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(30.0),
                                 ),
                               ),
-                              child: Center(
+                              child: const Center(
                                 child: Text('Permitir acceso a ubicacion',
                                     style: TextStyle(
                                         fontSize: 17,
@@ -103,9 +99,8 @@ class _LoadingPageState extends State<LoadingPage> {
     if (!serviceEnabled) {
       Geolocator.openLocationSettings();
       return setState(() {
-          permissionStatus = false;
-        });
-     
+        permissionStatus = false;
+      });
     }
 
     permission = await Geolocator.checkPermission();
@@ -136,7 +131,6 @@ class _LoadingPageState extends State<LoadingPage> {
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.BOTTOM,
       timeInSecForIosWeb: 1,
-      
     );
     await Geolocator.openAppSettings();
     checkPermission();

@@ -1,13 +1,9 @@
-// You can pass any object to the arguments parameter.
-// In this example, create a class that contains both
-// a customizable title and message.
-
-import 'package:latlong2/latlong.dart';
+import 'package:medirutas/models/bus.dart';
+import 'package:medirutas/models/busStop.dart';
 
 class HomePageArguments {
-  final String busId;
- 
-  
+  final Bus bus;
+  List<Stop> stops = [];
 
-  HomePageArguments(this.busId);
+  HomePageArguments(this.bus, this.stops);
 }
