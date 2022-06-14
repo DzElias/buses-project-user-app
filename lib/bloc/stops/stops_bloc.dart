@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:medirutas/models/busStop.dart';
+import 'package:medirutas/models/stop.dart';
 import 'package:medirutas/services/stops_service.dart';
 
 part 'stops_event.dart';

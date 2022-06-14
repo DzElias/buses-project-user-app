@@ -21,7 +21,7 @@ class SocketService with ChangeNotifier {
 
   void _initConfig() {
     // Dart client
-    _socket = IO.io('hhttps://pruebas-socket.herokuapp.com/', {
+    _socket = IO.io('https://pruebas-socket.herokuapp.com/', {
       'transports': ['websocket'],
       'autoConnect': true
     });

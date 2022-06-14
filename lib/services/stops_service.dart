@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart';
 
 import 'package:latlong2/latlong.dart';
-import 'package:medirutas/models/busStop.dart';
+import 'package:medirutas/models/stop.dart';
 
 class StopService {
   Future<List<Stop>> getStops() async {

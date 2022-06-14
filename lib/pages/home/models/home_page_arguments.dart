@@ -1,9 +1,8 @@
 import 'package:medirutas/models/bus.dart';
-import 'package:medirutas/models/busStop.dart';
+import 'package:medirutas/models/stop.dart';
 
 class HomePageArguments {
   final Bus bus;
-  List<Stop> stops = [];
 
-  HomePageArguments(this.bus, this.stops);
+  HomePageArguments(this.bus);
 }

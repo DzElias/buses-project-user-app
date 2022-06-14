@@ -11,7 +11,7 @@ import 'services/socket_service.dart';
 
 void main() {
   runApp(const MainActivity());
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft]);
 }
 
 class MainActivity extends StatelessWidget {
@@ -38,5 +38,5 @@ class MainActivity extends StatelessWidget {
           routes: appRoutes,
           initialRoute: 'loading',
         ));//
-  }
+      } 
 }

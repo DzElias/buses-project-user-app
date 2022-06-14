@@ -15,9 +15,6 @@ class Stop {
         required this.titulo,
         required this.latitud,
         required this.longitud,
-        required this.direccion,
-        required this.imagen,
-        required this.v,
         required this.esperas,
         
     });
@@ -26,9 +23,6 @@ class Stop {
     String titulo;
     double latitud;
     double longitud;
-    String direccion;
-    String imagen;
-    int v;
     int esperas;
     
 
@@ -37,9 +31,6 @@ class Stop {
         titulo: json["titulo"],
         latitud: json["latitud"].toDouble(),
         longitud: json["longitud"].toDouble(),
-        direccion: json["direccion"],
-        imagen: json["imagen"],
-        v: json["__v"],
         esperas: json["esperas"],
         
     );
@@ -49,9 +40,6 @@ class Stop {
         "titulo": titulo,
         "latitud": latitud,
         "longitud": longitud,
-        "direccion": direccion,
-        "imagen": imagen,
-        "__v": v,
         "esperas": esperas,
         
     };
