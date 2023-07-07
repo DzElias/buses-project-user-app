@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "558902312458",
+    "project_id": "busesproject",
+    "storage_bucket": "busesproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558902312458:android:1eabb333258d9c932529f3",
+        "android_client_info": {
+          "package_name": "com.example.me_voy_usuario"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558902312458-870ng9a5pvvf3jctqvr33rp8mpjgfugq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzlK4_XYSdMCVaTysBbprWVDFtxY8Tw0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558902312458-870ng9a5pvvf3jctqvr33rp8mpjgfugq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
